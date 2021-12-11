@@ -1,0 +1,22 @@
+﻿<Window x:Class="UserInterface.Main.CostumerMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserInterface.Main"
+        mc:Ignorable="d"
+        Title="Costumer Main" Height="450" Width="800">
+    <Grid>
+
+
+        <TextBox x:Name="HelloBox" Loaded="HelloBox_Loaded" BorderThickness="2" HorizontalAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="302" Height="18"/>
+        <Button x:Name="Neworder" Click="Neworder_Click" Content="New Order" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="40" Width="128"/>
+        <Button x:Name="Showorders" Click="Showorders_Click" Content="Show Previous orders" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Height="40" Width="128"/>
+        <Button x:Name="Editpersonaldata" Click="Editpersonaldata_Click" Content="Edit Personal data" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Height="40" Width="128"/>
+        <Button x:Name="Logout" Content="Log-Out" Click="Logout_Click" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" Height="40" Width="128"/>
+        <DataGrid x:Name="MainData" BorderThickness="1" Margin="138,18,0,0" Cursor="Hand" AlternatingRowBackground="Gray" Background="#FFF0F0F0" FontSize="14" FontFamily="Arial">
+            
+        </DataGrid>
+
+    </Grid>
+</Window>
