@@ -7,11 +7,11 @@ using DataBase.Models;
 
 namespace Logic_Layer.DataAccess.Interfaces
 {
-    public interface IAddresscustomersRepository : IGenericDataRepository<Address_customerss>, INewAddresscustomers<Address_customerss>
+    public interface IAddresscostumersRepository : IGenericDataRepository<Address_costumers>, INewAddresscostumers<Address_costumers>
     {
-        public Task<IEnumerable<Address_customerss>> GetAddresses_ByCity(string city);
-        public Task UpdateAddressAsync(Address_customerss address);
-        public Task<List<Address_customerss>> GetwithuserAsync();
+        public Task<IEnumerable<Address_costumers>> GetAddresses_ByCity(string city);
+        public Task UpdateAddressAsync(Address_costumers address);
+        public Task<List<Address_costumers>> GetwithuserAsync();
 
     }
 }

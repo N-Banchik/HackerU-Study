@@ -17,19 +17,19 @@ using UserInterface.Main;
 namespace UserInterface.LogIn
 {
     /// <summary>
-    /// Interaction logic for customersLogin.xaml
+    /// Interaction logic for costumersLogin.xaml
     /// </summary>
-    public partial class customersLogin : Window
+    public partial class costumersLogin : Window
     {
-        private LogIn_customers log = new LogIn_customers();
-        public customersLogin()
+        private LogIn_costumers log = new LogIn_costumers();
+        public costumersLogin()
         {
             InitializeComponent();
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            customersReg reg = new();
+            costumersReg reg = new();
             reg.Show();
         }
         private async void Login_Click(object sender, RoutedEventArgs e)
@@ -52,10 +52,10 @@ namespace UserInterface.LogIn
                             return;
                         }
                     }
-                    var customers = await log.LogInAsync(Email_Text.Text, passwordText.Password);
-                    if (customers!=null)
+                    var costumers = await log.LogInAsync(Email_Text.Text, passwordText.Password);
+                    if (costumers!=null)
                     {
-                        customersMain main = new(log.customers, customers);
+                        costumersMain main = new(log.costumers, costumers);
                         main.Show();
                         this.Close();
                         

@@ -28,7 +28,7 @@ namespace UserInterface.EmployeeAbilitys.Manager.Employeemenu
             {
                 if (await log.ChackIfExsistsAsync(Email.Text))
                 {
-                    MessageBox.Show("customers already exists with this Email");
+                    MessageBox.Show("costumers already exists with this Email");
 
                 }
                 else

@@ -19,7 +19,7 @@ namespace DataBase.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DataBase.Models.Address_customerss", b =>
+            modelBuilder.Entity("DataBase.Models.Address_costumers", b =>
                 {
                     b.Property<int>("Address_ID")
                         .ValueGeneratedOnAdd()
@@ -35,7 +35,7 @@ namespace DataBase.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("City");
 
-                    b.Property<int>("customers_ID")
+                    b.Property<int>("costumers_ID")
                         .HasColumnType("int");
 
                     b.Property<int>("House_Number")
@@ -53,9 +53,9 @@ namespace DataBase.Migrations
 
                     b.HasKey("Address_ID");
 
-                    b.HasIndex("customers_ID");
+                    b.HasIndex("costumers_ID");
 
-                    b.ToTable("Address_customerss");
+                    b.ToTable("Address_costumers");
                 });
 
             modelBuilder.Entity("DataBase.Models.Address_Employees", b =>
@@ -164,12 +164,12 @@ namespace DataBase.Migrations
                     b.ToTable("EIs");
                 });
 
-            modelBuilder.Entity("DataBase.Models.customerss", b =>
+            modelBuilder.Entity("DataBase.Models.costumers", b =>
                 {
-                    b.Property<int>("customers_ID")
+                    b.Property<int>("costumers_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("customers Id")
+                        .HasColumnName("costumer id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("Birthdate")
@@ -202,9 +202,9 @@ namespace DataBase.Migrations
                         .HasColumnType("nvarchar(25)")
                         .HasColumnName("Last Name");
 
-                    b.HasKey("customers_ID");
+                    b.HasKey("costumers_ID");
 
-                    b.ToTable("customerss");
+                    b.ToTable("costumers");
                 });
 
             modelBuilder.Entity("DataBase.Models.EDI", b =>
@@ -353,15 +353,15 @@ namespace DataBase.Migrations
                     b.ToTable("Shifts");
                 });
 
-            modelBuilder.Entity("DataBase.Models.Address_customerss", b =>
+            modelBuilder.Entity("DataBase.Models.Address_costumers", b =>
                 {
-                    b.HasOne("DataBase.Models.customerss", "customers")
+                    b.HasOne("DataBase.Models.costumers", "costumers")
                         .WithMany("Address")
-                        .HasForeignKey("customers_ID")
+                        .HasForeignKey("costumers_ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("customers");
+                    b.Navigation("costumers");
                 });
 
             modelBuilder.Entity("DataBase.Models.Connactions.EDIItems", b =>
@@ -448,7 +448,7 @@ namespace DataBase.Migrations
                     b.Navigation("item");
                 });
 
-            modelBuilder.Entity("DataBase.Models.customerss", b =>
+            modelBuilder.Entity("DataBase.Models.costumers", b =>
                 {
                     b.Navigation("Address");
                 });

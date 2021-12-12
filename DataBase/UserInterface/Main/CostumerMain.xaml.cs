@@ -18,16 +18,16 @@ using UserInterface.UserAbilitys;
 namespace UserInterface.Main
 {
     /// <summary>
-    /// Interaction logic for customersMain.xaml
+    /// Interaction logic for costumersMain.xaml
     /// </summary>
-    public partial class customersMain : Window
+    public partial class costumersMain : Window
     {
-        private customerss ME;
-        private UnitOfWork_customers unitOfWork_;
-        public customersMain(UnitOfWork_customers unit, customerss customerss)
+        private costumers ME;
+        private UnitOfWork_costumers unitOfWork_;
+        public costumersMain(UnitOfWork_costumers unit, costumers costumers)
         {
             InitializeComponent();
-            ME = customerss;
+            ME = costumers;
             unitOfWork_ = unit;
         }
 
@@ -60,7 +60,7 @@ namespace UserInterface.Main
         private  void Editpersonaldata_Click(object sender, RoutedEventArgs e)
         {
 
-            PersonalInfoUpdate_customers personalInfoUpdate_ = new(unitOfWork_,ME);
+            PersonalInfoUpdate_costumers personalInfoUpdate_ = new(unitOfWork_,ME);
             personalInfoUpdate_.ShowDialog();
         }
 

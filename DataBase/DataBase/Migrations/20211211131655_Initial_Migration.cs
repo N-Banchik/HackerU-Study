@@ -54,10 +54,10 @@ namespace DataBase.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "customerss",
+                name: "costumers",
                 columns: table => new
                 {
-                    customersId = table.Column<int>(name: "customers Id", type: "int", nullable: false)
+                    costumersId = table.Column<int>(name: "costumer id", type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(name: "First Name", type: "nvarchar(25)", maxLength: 25, nullable: false),
                     LastName = table.Column<string>(name: "Last Name", type: "nvarchar(25)", maxLength: 25, nullable: false),
@@ -68,7 +68,7 @@ namespace DataBase.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_customerss", x => x.customersId);
+                    table.PrimaryKey("PK_costumers", x => x.costumersId);
                 });
 
             migrationBuilder.CreateTable(
@@ -128,12 +128,12 @@ namespace DataBase.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Address_customerss",
+                name: "Address_costumers",
                 columns: table => new
                 {
                     Address_ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    customers_ID = table.Column<int>(type: "int", nullable: false),
+                    costumers_ID = table.Column<int>(type: "int", nullable: false),
                     StreetName = table.Column<string>(name: "Street Name", type: "nvarchar(max)", nullable: false),
                     HouseNumber = table.Column<int>(name: "House Number", type: "int", nullable: false),
                     ApartmentNumber = table.Column<int>(name: "Apartment Number", type: "int", nullable: false),
@@ -142,12 +142,12 @@ namespace DataBase.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Address_customerss", x => x.Address_ID);
+                    table.PrimaryKey("PK_Address_costumers", x => x.Address_ID);
                     table.ForeignKey(
-                        name: "FK_Address_customerss_customerss_customers_ID",
-                        column: x => x.customers_ID,
-                        principalTable: "customerss",
-                        principalColumn: "customers Id",
+                        name: "FK_Address_costumers_costumers_costumers_ID",
+                        column: x => x.costumers_ID,
+                        principalTable: "costumers",
+                        principalColumn: "costumer id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -222,9 +222,9 @@ namespace DataBase.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Address_customerss_customers_ID",
-                table: "Address_customerss",
-                column: "customers_ID");
+                name: "IX_Address_costumers_costumers_ID",
+                table: "Address_costumers",
+                column: "costumers_ID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EDIs_Approved_By",
@@ -255,7 +255,7 @@ namespace DataBase.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Address_customerss");
+                name: "Address_costumers");
 
             migrationBuilder.DropTable(
                 name: "EIs");
@@ -264,7 +264,7 @@ namespace DataBase.Migrations
                 name: "Shifts");
 
             migrationBuilder.DropTable(
-                name: "customerss");
+                name: "costumers");
 
             migrationBuilder.DropTable(
                 name: "EDIs");

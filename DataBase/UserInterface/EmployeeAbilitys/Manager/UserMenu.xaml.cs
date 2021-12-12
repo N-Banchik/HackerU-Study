@@ -22,8 +22,8 @@ namespace UserInterface.EmployeeAbilitys.Manager
     public partial class UserMenu : Window
     {
         private UnitOfWork_Employee Unit_Employee;
-        List<Address_customerss> _Address_customerss;
-        List<customerss> _customerss;
+        List<Address_costumers> _Address_costumers;
+        List<costumers> _costumers;
         public UserMenu(UnitOfWork_Employee Employee)
         {
             Unit_Employee = Employee;
@@ -38,31 +38,31 @@ namespace UserInterface.EmployeeAbilitys.Manager
 
         private async void ShowUers_Click(object sender, RoutedEventArgs e)
         {
-            _Address_customerss = (List<Address_customerss>)await Unit_Employee.addresscustomers.GetAllAsync();
-            _customerss = (List<customerss>)await Unit_Employee.customers.GetAllAsync();
+            _Address_costumers = (List<Address_costumers>)await Unit_Employee.addresscostumers.GetAllAsync();
+            _costumers = (List<costumers>)await Unit_Employee.costumers.GetAllAsync();
             if (IDBox.Text != string.Empty)
             {
-                UserShow.ItemsSource = _customerss.Where(i => i.customers_ID == int.Parse(IDBox.Text));
+                UserShow.ItemsSource = _costumers.Where(i => i.costumers_ID == int.Parse(IDBox.Text));
                 IDBox.Clear();
             }
             else if (NameBox.Text != string.Empty)
             {
-                UserShow.ItemsSource = _customerss.Where(i => i.First_Name.Contains(NameBox.Text) || i.last_Name.Contains(NameBox.Text));
+                UserShow.ItemsSource = _costumers.Where(i => i.First_Name.Contains(NameBox.Text) || i.last_Name.Contains(NameBox.Text));
                 NameBox.Clear();
             }
             else if (Phonebox.Text != string.Empty)
             {
-                UserShow.ItemsSource = _customerss.Where(i => i.Phone_Number == Phonebox.Text);
+                UserShow.ItemsSource = _costumers.Where(i => i.Phone_Number == Phonebox.Text);
                 Phonebox.Clear();
             }
             else if (EmailBox.Text != string.Empty)
             {
-                UserShow.ItemsSource = _customerss.Where(i => i.Email == EmailBox.Text);
+                UserShow.ItemsSource = _costumers.Where(i => i.Email == EmailBox.Text);
                 EmailBox.Clear();
             }
             else
             {
-                UserShow.ItemsSource = _customerss;
+                UserShow.ItemsSource = _costumers;
 
             }
 

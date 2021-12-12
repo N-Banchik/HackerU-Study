@@ -9,20 +9,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Logic_Layer.DataAccess.Access
 {
-    public class AddresscustomersRepository : GenericDataRepository<Address_customerss>, IAddresscustomersRepository
+    public class AddresscostumersRepository : GenericDataRepository<Address_costumers>, IAddresscostumersRepository
     {
-        public AddresscustomersRepository(DbContext context) : base(context)
+        public AddresscostumersRepository(DbContext context) : base(context)
         {
 
         }
 
-        public List<Address_customerss> AddNewAddressAsync(string streetname, int housenumber, int apt, int zipcode, string city)
+        public List<Address_costumers> AddNewAddressAsync(string streetname, int housenumber, int apt, int zipcode, string city)
         {
             try
             {
-                Address_customerss newAdd = new Address_customerss { Street_Name = streetname, House_Number = housenumber, Apartment_Number = apt, Zipcode = zipcode, City = city };
+                Address_costumers newAdd = new Address_costumers { Street_Name = streetname, House_Number = housenumber, Apartment_Number = apt, Zipcode = zipcode, City = city };
 
-                return new List<Address_customerss> { newAdd };
+                return new List<Address_costumers> { newAdd };
 
             }
             catch (Exception)
@@ -33,11 +33,11 @@ namespace Logic_Layer.DataAccess.Access
             };
         }
 
-        public async Task<IEnumerable<Address_customerss>> GetAddresses_ByCity(string city)
+        public async Task<IEnumerable<Address_costumers>> GetAddresses_ByCity(string city)
         {
             try
             {
-                return await dbSet.Where(c => c.City == city).Include(i=>i.customers).ToListAsync();
+                return await dbSet.Where(c => c.City == city).Include(i=>i.costumers).ToListAsync();
             }
             catch (Exception)
             {
@@ -45,13 +45,13 @@ namespace Logic_Layer.DataAccess.Access
                 throw new Exception("Problem in Providing the Data");
             }
         }
-        public async Task<List<Address_customerss>> GetwithuserAsync()
+        public async Task<List<Address_costumers>> GetwithuserAsync()
         {
-            return await dbSet.Include(i => i.customers).ToListAsync();
+            return await dbSet.Include(i => i.costumers).ToListAsync();
         }
 
 
-        public async Task UpdateAddressAsync(Address_customerss address)
+        public async Task UpdateAddressAsync(Address_costumers address)
         {
             try
             {

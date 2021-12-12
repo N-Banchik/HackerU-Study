@@ -18,10 +18,10 @@ namespace DataBase.Context
         }
 
         public DbSet<Address_Employees> address_Employees { get; set; }
-        public DbSet<Address_customerss> Address_customerss { get; set; }
+        public DbSet<Address_costumers> Address_costumers { get; set; }
         public DbSet<Brands> Brands { get; set; }
         public DbSet<Categories> Categories { get; set; }
-        public DbSet<customerss> customerss { get; set; }
+        public DbSet<costumers> costumers { get; set; }
         public DbSet<Employees> Employees { get; set; }
         public DbSet<Items> Items { get; set; }
         public DbSet<Shifts> Shifts { get; set; }
@@ -42,11 +42,11 @@ namespace DataBase.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new Addresses_customerss_Config());
+            modelBuilder.ApplyConfiguration(new Addresses_costumers_Config());
             modelBuilder.ApplyConfiguration(new Addresses_Employees_Config());
             modelBuilder.ApplyConfiguration(new Brand_Config());
             modelBuilder.ApplyConfiguration(new Categories_Config());
-            modelBuilder.ApplyConfiguration(new customerss_Config());
+            modelBuilder.ApplyConfiguration(new costumers_Config());
             modelBuilder.ApplyConfiguration(new Employess_Confi());
             modelBuilder.ApplyConfiguration(new Items_Config());
             modelBuilder.ApplyConfiguration(new Shifts_config());

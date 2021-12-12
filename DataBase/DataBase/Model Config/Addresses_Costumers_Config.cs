@@ -10,12 +10,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DataBase.Model_Config
 {
-    class Addresses_customerss_Config : IEntityTypeConfiguration<Address_customerss>
+    class Addresses_costumers_Config : IEntityTypeConfiguration<Address_costumers>
     {
-        public void Configure(EntityTypeBuilder<Address_customerss> builder)
+        public void Configure(EntityTypeBuilder<Address_costumers> builder)
         {
             builder.HasKey(a => a.Address_ID);
-            builder.HasOne(c => c.customers).WithMany(a => a.Address).HasForeignKey(c => c.customers_ID);
+            builder.HasOne(c => c.costumers).WithMany(a => a.Address).HasForeignKey(c => c.costumers_ID);
             builder.Property(s => s.Street_Name).HasColumnName("Street Name").IsRequired();
             builder.Property(s => s.House_Number).HasColumnName("House Number").IsRequired();
             builder.Property(s => s.Apartment_Number).HasColumnName("Apartment Number").IsRequired();

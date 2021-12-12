@@ -7,9 +7,9 @@ using DataBase.Models;
 
 namespace Logic_Layer.DataAccess.Interfaces
 {
-  public  interface IcustomersRepository : IGenericDataRepository<customerss>
+  public  interface IcostumersRepository : IGenericDataRepository<costumers>
     {
-        public Task Addnewcustomers(string first, string last, DateTime Birth, string email, string Pass, string phone, List<Address_customerss> address);
+        public Task Addnewcostumers(string first, string last, DateTime Birth, string email, string Pass, string phone, List<Address_costumers> address);
         public Task UpdatePasswordAsync(string email, string newpass);
         
     }

@@ -9,25 +9,25 @@ using DataBase.Context;
 
 namespace Logic_Layer.DataAccess.Access
 {
-   public  class UnitOfWork_customers: IunitOfWork_customers
+   public  class UnitOfWork_costumers: IunitOfWork_costumers
     {
         private readonly DbContext context;
 
-        public UnitOfWork_customers()
+        public UnitOfWork_costumers()
         {
             
             this.context = new FactoryDbContext();
             this.brands = new BrandsRepository(context);
             this.category = new CategoryRepository(context);
             this.items = new ItemsRepository(context);
-            this.customers = new customersRepository(context);
-            this.addresscustomers = new AddresscustomersRepository(context);
+            this.costumers = new costumersRepository(context);
+            this.addresscostumers = new AddresscostumersRepository(context);
         }
 
-        public IAddresscustomersRepository addresscustomers { get; private set; }
+        public IAddresscostumersRepository addresscostumers { get; private set; }
         public IBrandsRepository brands { get; private set; }
         public ICategoryRepository category { get; private set; }
-        public IcustomersRepository customers { get; private set; }
+        public IcostumersRepository costumers { get; private set; }
         public IItemsRepository items { get; private set; }
 
         public async Task CompleteAsync()
