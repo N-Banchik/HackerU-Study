@@ -334,12 +334,13 @@ namespace DataBase.Migrations
                     b.Property<int>("Employee_ID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Shift_End")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("Shift_End")
+                        .HasColumnType("smalldatetime")
+                        .HasColumnName("Shift end time");
 
                     b.Property<DateTime>("Shift_Start")
                         .HasColumnType("smalldatetime")
-                        .HasColumnName("Shift end time");
+                        .HasColumnName("Shift start time");
 
                     b.Property<double>("Total_Time")
                         .HasColumnType("float")

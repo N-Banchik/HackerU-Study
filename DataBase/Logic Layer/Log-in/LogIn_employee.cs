@@ -23,9 +23,8 @@ namespace Logic_Layer.Log_in
         {
             try
             {
-                return int.TryParse(Email, out int id)
-                    ? await employee.employee.GetById(int.Parse(Email)) != null
-                    : throw new Exception("ID not a number!");
+                return await employee.employee.GetOneByCondition(i => i.Email == Email) != null;
+                    
 
             }
             catch (Exception)

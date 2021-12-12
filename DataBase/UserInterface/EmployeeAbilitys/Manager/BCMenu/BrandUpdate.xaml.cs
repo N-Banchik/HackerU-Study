@@ -36,7 +36,7 @@ namespace UserInterface.EmployeeAbilitys.Manager.BCMenu
             {
                 _brand.Brand_Name = Name.Text;
                 _brand.Manufacturing_Country = Manufacturingcountry.Text;
-                await Unit_Employee.brands.Add(_brand);
+                await Unit_Employee.brands.Upsert(_brand);
                 await Unit_Employee.CompleteAsync();
                 Close();
                 MessageBox.Show("Brand Updated!");

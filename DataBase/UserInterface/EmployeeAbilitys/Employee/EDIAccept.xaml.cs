@@ -61,6 +61,12 @@ namespace UserInterface.EmployeeAbilitys.Employee
             {
 
                 edi = await Unit_Employee.EDI.GetNextWorkEDIAsync();
+                if (edi == null)
+                {
+                    MessageBox.Show("No EDI to accept");
+                    Close();
+                    return;
+                }
                 edi.Items.ToList().ForEach((i) => itm.Add(i));
                 ViewGrid.ItemsSource = itm;
                 EmployeeName.Text = $"{_employee.First_Name} {_employee.last_Name}";
@@ -110,7 +116,7 @@ namespace UserInterface.EmployeeAbilitys.Employee
 
                 if (item.QuantityArrived == null)
                 {
-                    throw new Exception($"Item {item.Items.Item_Name} do not have Arrived quantity.\n Please indicate number of items");
+                    throw new Exception($"Item {item.Items.Item_Name} dos not have Arrived quantity.\n Please indicate number of items");
                 }
                 if (item.QuantityArrived.Value != item.Quantity)
                 {
@@ -124,6 +130,7 @@ namespace UserInterface.EmployeeAbilitys.Employee
                 foreach (EDIItems dataobject in this.ViewGrid.SelectedItems)
                 {
                     row = this.ViewGrid.ItemContainerGenerator.ContainerFromItem(dataobject) as DataGridRow;
+
                     row.IsEnabled = false;
                 }
 
@@ -134,5 +141,9 @@ namespace UserInterface.EmployeeAbilitys.Employee
                 MessageBox.Show(ex.Message);
             }
         }
+
+        
+
+        
     }
 }

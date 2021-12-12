@@ -39,7 +39,7 @@ namespace UserInterface.EmployeeAbilitys.Manager
 
             try
             {
-                ShiftShow.ItemsSource = await Unit_Employee.shifts.GetByCondition(i => i.Shift_Start.Date == DateTime.Today && i.Shift_End < i.Shift_Start);
+                ShiftShow.ItemsSource = await Unit_Employee.shifts.GetByCondition(i => i.Shift_Start.Date == DateTime.Today && i.Shift_End==null);
             }
             catch (Exception ex)
             {

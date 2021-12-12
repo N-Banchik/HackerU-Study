@@ -59,17 +59,8 @@ namespace Logic_Layer.DataAccess.Access
         {
             try
             {
-                
-
-
-                List<Items> itms = await dbSet.FromSqlRaw("select * from Items i where i.[Item Id] not in (select i.[Item Id] from Items i join EIs e on i.[Item Id]=e.Item_Id join EDIs es on e.EDI_Id = es.EDI_Id where i.[Units In inventory]<i.[Minimum Units In inventory] and es.Approved_By is null )").ToListAsync();
-
-
-
-
-
-                    return itms;
-
+                List<Items> itms = await dbSet.FromSqlRaw("select * from Items i where i.[Units In inventory]<i.[Minimum Units In inventory] and i.[Item Id] not in (select i.[Item Id] from Items i join EIs e on i.[Item Id]=e.Item_Id join EDIs es on e.EDI_Id = es.EDI_Id where i.[Units In inventory]<i.[Minimum Units In inventory] and es.Approved_By is null )").ToListAsync();
+                return itms;
             }
             catch (Exception)
             {

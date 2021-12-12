@@ -12,6 +12,11 @@ namespace DataBase.Context
 {
     public class FactoryDbContext : DbContext
     {
+        public FactoryDbContext()
+        {
+
+        }
+
         public DbSet<Address_Employees> address_Employees { get; set; }
         public DbSet<Address_Costumers> Address_Costumers { get; set; }
         public DbSet<Brands> Brands { get; set; }
@@ -28,7 +33,11 @@ namespace DataBase.Context
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=FactoryDB;Trusted_Connection=True;MultipleActiveResultSets=true;");
+
+
             }
+
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

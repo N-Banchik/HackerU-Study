@@ -37,7 +37,7 @@ namespace UserInterface.EmployeeAbilitys.Manager.BCMenu
             {
                 _Category.Category_Name = Name.Text;
                 _Category.Description = Description.Text;
-                await Unit_Employee.category.Add(_Category);
+                await Unit_Employee.category.Upsert(_Category);
                 await Unit_Employee.CompleteAsync();
                 MessageBox.Show("Category updated");
                 Close();

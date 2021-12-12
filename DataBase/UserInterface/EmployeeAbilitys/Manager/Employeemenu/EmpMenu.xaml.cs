@@ -31,7 +31,7 @@ namespace UserInterface.EmployeeAbilitys.Manager.Employeemenu
         }
 
 
-        private async void EmpOrders_Click(object sender, RoutedEventArgs e)
+        private async void Employee_EDIs_Click(object sender, RoutedEventArgs e)
         {
             EDIMenu eDI = new(Unit_Employee);
 

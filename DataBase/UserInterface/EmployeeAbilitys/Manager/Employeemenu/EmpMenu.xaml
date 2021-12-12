@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserInterface.EmployeeAbilitys.Manager.Employeemenu"
         mc:Ignorable="d"
-        Title="Employees Menu" Height="450" Width="800">
+        Title="Employees Menu" Height="450" Width="800" SizeToContent="Width">
     <Grid>
         <DataGrid x:Name="UserShow" Margin="0,140,0,0" AutoGenerateColumns="False"  CanUserAddRows="False" >
             <DataGrid.Columns>
@@ -27,7 +27,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button x:Name="EmpOrders" Content="View Employee orders" Click="EmpOrders_Click" />
+                                <Button x:Name="Employee_EDIs" Content="View Employee EDI's" Click="Employee_EDIs_Click" />
 
                             </StackPanel>
                         </DataTemplate>
@@ -40,8 +40,8 @@
         <TextBox x:Name="IDBox" HorizontalAlignment="Left" Margin="29,42,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Height="23" FontSize="14"/>
         <Label Content="By Name:" HorizontalAlignment="Left" Margin="183,10,0,0" VerticalAlignment="Top" Height="27" Width="105" FontSize="14"/>
         <TextBox x:Name="NameBox" HorizontalAlignment="Left" Margin="183,42,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Height="23" FontSize="14"/>
-        <Label Content="By Phone number:" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="27" Width="128" FontSize="14"/>
-        <TextBox x:Name="Phonebox" HorizontalAlignment="Center" Margin="0,42,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Height="23" FontSize="14"/>
+        <Label Content="By Phone number:" HorizontalAlignment="Left" Margin="326,10,0,0" VerticalAlignment="Top" Height="27" Width="128" FontSize="14"/>
+        <TextBox x:Name="Phonebox" HorizontalAlignment="Left" Margin="326,42,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Height="23" FontSize="14"/>
         <Label Content="By Email:" HorizontalAlignment="Left" Margin="486,10,0,0" VerticalAlignment="Top" Height="27" Width="128" FontSize="14"/>
         <TextBox x:Name="EmailBox" HorizontalAlignment="Left" Margin="486,42,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Height="23" FontSize="14"/>
         <Button x:Name="NewEmp" Click="NewEmp_Click" Content="New Users" HorizontalAlignment="Left" Margin="550,88,0,0" VerticalAlignment="Top" Height="34" Width="87"/>
