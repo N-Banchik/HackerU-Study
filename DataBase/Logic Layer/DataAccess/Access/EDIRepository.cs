@@ -6,6 +6,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,10 @@ namespace Logic_Layer.DataAccess.Access
         public async Task<List<EDI>> GetEDIsAsync()
         {
             return await dbSet.Include(i => i.employee).Include(i => i.Items).ThenInclude(i => i.Items).ToListAsync();
+        }
+        public async override Task<ICollection<EDI>> GetByCondition(Expression<Func<EDI, bool>> predicate) 
+        {
+            return await dbSet.Where(predicate).Include(i => i.employee).Include(i => i.Items).ThenInclude(i => i.Items).ToListAsync();
         }
 
         public async Task<List<EDI>> GetbyDateAsync(DateTime fromdate, DateTime TO)
