@@ -40,10 +40,10 @@ namespace UserInterface
             this.WindowState = WindowState.Minimized;
         }
 
-        private void CostumerLogInButton_Click(object sender, RoutedEventArgs e)
+        private void customersLogInButton_Click(object sender, RoutedEventArgs e)
         {
-            CostumerLogin costumerLogin = new();
-            costumerLogin.Show();
+            customersLogin customersLogin = new();
+            customersLogin.Show();
             this.WindowState = WindowState.Minimized;
         }
 

@@ -9,18 +9,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Logic_Layer.DataAccess.Access
 {
-    public class CostumerRepository : GenericDataRepository<Costumers>, ICostumerRepository, IPassword
+    public class customersRepository : GenericDataRepository<customerss>, IcustomersRepository, IPassword
     {
-        public CostumerRepository(DbContext context) : base(context)
+        public customersRepository(DbContext context) : base(context)
         {
 
         }
 
-        public async Task AddnewCostumer(string first, string last, DateTime Birth, string email, string Pass, string phone, List<Address_Costumers> address)
+        public async Task Addnewcustomers(string first, string last, DateTime Birth, string email, string Pass, string phone, List<Address_customerss> address)
         {
             try
             {
-                Costumers Toadd = new Costumers { First_Name = first, last_Name = last, Birthdate = Birth, Email = email, Password = Pass, Phone_Number = phone, Address = address };
+                customerss Toadd = new customerss { First_Name = first, last_Name = last, Birthdate = Birth, Email = email, Password = Pass, Phone_Number = phone, Address = address };
 
                 await base.Add(Toadd);
 
@@ -39,7 +39,7 @@ namespace Logic_Layer.DataAccess.Access
             try
             {
 
-                Costumers user = await GetOneByCondition(i => i.Email == Email);
+                customerss user = await GetOneByCondition(i => i.Email == Email);
                 user.Password = user.Password != newpass ? newpass : throw new Exception("Password cannot be the same");
             }
             catch (Exception)

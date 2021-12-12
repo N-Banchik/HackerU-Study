@@ -22,8 +22,8 @@ namespace Logic_Layer.DataAccess.Access
             this.employee = new EmployeeRepository(context);
             this.items = new ItemsRepository(context);
             this.shifts = new ShiftsRepository(context);
-            this.costumer = new CostumerRepository(context);
-            this.addressCostumer = new AddressCostumerRepository(context);
+            this.customers = new customersRepository(context);
+            this.addresscustomers = new AddresscustomersRepository(context);
             this.EDI = new EDIRepository(context);
         }
 
@@ -33,8 +33,8 @@ namespace Logic_Layer.DataAccess.Access
         public IEmployeeRepository employee { get; private set; }
         public IItemsRepository items { get; private set; }
         public IShiftsRepository shifts { get; private set; }
-        public ICostumerRepository costumer { get; private set; }
-        public IAddressCostumerRepository addressCostumer { get; private set; }
+        public IcustomersRepository customers { get; private set; }
+        public IAddresscustomersRepository addresscustomers { get; private set; }
         public IEDIREpository EDI { get; private set; }
 
         public async Task CompleteAsync()

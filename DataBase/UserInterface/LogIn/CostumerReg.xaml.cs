@@ -16,12 +16,12 @@ using System.Windows.Shapes;
 namespace UserInterface.LogIn
 {
     /// <summary>
-    /// Interaction logic for CostumerReg.xaml
+    /// Interaction logic for customersReg.xaml
     /// </summary>
-    public partial class CostumerReg : Window
+    public partial class customersReg : Window
     {
-        private LogIn_costumer log = new LogIn_costumer();
-        public CostumerReg()
+        private LogIn_customers log = new LogIn_customers();
+        public customersReg()
         {
             InitializeComponent();
 
@@ -34,7 +34,7 @@ namespace UserInterface.LogIn
             {
                 if (await log.ChackIfExsistsAsync(Email.Text))
                 {
-                    MessageBox.Show("Costumer already exists with this Email");
+                    MessageBox.Show("customers already exists with this Email");
 
                 }
                 else

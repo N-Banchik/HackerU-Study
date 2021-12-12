@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Logic_Layer.DataAccess.Interfaces
 {
-   public interface IunitOfWork_Costumer :IAsyncDisposable
+   public interface IunitOfWork_customers :IAsyncDisposable
     {
-        IAddressCostumerRepository addressCostumer { get;  }
+        IAddresscustomersRepository addresscustomers { get;  }
         IBrandsRepository brands { get; }
         ICategoryRepository category { get; }
-        ICostumerRepository costumer { get; }
+        IcustomersRepository customers { get; }
         IItemsRepository items { get; }
 
         Task CompleteAsync();

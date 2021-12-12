@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4j/eZG7w6ZTuyZOLtNAzpscDNNDIaSbTEUEkq2gQLZhRwGTrZdbEEvYNHOPMIR1eWE1JG68Qmr0RztZ4y8pimw==",
+  "dgSpecHash": "8iQeLja4oHTAEsN3Y3Q4CGtLLP4JpA3VZt/1jhSq5p4EWxbrENVjiezQcwQE/4kZrNgGFtt7bimOwIDFRZLMuw==",
   "success": true,
-  "projectFilePath": "D:\\Hackeru\\Mid Project\\DataBase\\Logic Layer\\Logic Layer.csproj",
+  "projectFilePath": "D:\\Hackeru\\HackerUGit\\DataBase\\Logic Layer\\Logic Layer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nirba\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\nirba\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

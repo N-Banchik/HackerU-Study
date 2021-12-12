@@ -10,21 +10,21 @@ using System.Threading.Tasks;
 
 namespace Logic_Layer.Log_in
 {
-    public class LogIn_costumer : Ilogin<Costumers>
+    public class LogIn_customers : Ilogin<customerss>
     {
-        public UnitOfWork_Costumer costumer { get; private set; }
+        public UnitOfWork_customers customers { get; private set; }
 
-        public LogIn_costumer()
+        public LogIn_customers()
         {
-            this.costumer = new UnitOfWork_Costumer();
+            this.customers = new UnitOfWork_customers();
         }
 
-        public async Task<Costumers> LogInAsync(string Email, string password)
+        public async Task<customerss> LogInAsync(string Email, string password)
         {
             try
             {
 
-                return await costumer.costumer.GetOneByCondition(i => i.Email == Email && i.Password == Enscryption(password, Email));
+                return await customers.customers.GetOneByCondition(i => i.Email == Email && i.Password == Enscryption(password, Email));
 
             }
 
@@ -40,7 +40,7 @@ namespace Logic_Layer.Log_in
             try
             {
 
-                return await costumer.costumer.GetOneByCondition(i => i.Email == Email) != null;
+                return await customers.customers.GetOneByCondition(i => i.Email == Email) != null;
 
             }
             catch (Exception)
@@ -52,8 +52,8 @@ namespace Logic_Layer.Log_in
 
         public async Task RegistarAsync(string streetname, int housenumber, int apt, int zipcode, string city, string first, string last, DateTime Birth, string Pass, string phone, bool manager, string Email)
         {
-            await costumer.costumer.AddnewCostumer(first, last, Birth, Email, Enscryption(Pass, Email), phone, costumer.addressCostumer.AddNewAddressAsync(streetname, housenumber, apt, zipcode, city));
-            await costumer.CompleteAsync();
+            await customers.customers.Addnewcustomers(first, last, Birth, Email, Enscryption(Pass, Email), phone, customers.addresscustomers.AddNewAddressAsync(streetname, housenumber, apt, zipcode, city));
+            await customers.CompleteAsync();
 
         }
 
@@ -68,7 +68,7 @@ namespace Logic_Layer.Log_in
             {
                 
 
-                    await costumer.costumer.UpdatePasswordAsync(Email, Enscryption(newpass, Email));
+                    await customers.customers.UpdatePasswordAsync(Email, Enscryption(newpass, Email));
 
                 
                 

@@ -18,22 +18,22 @@ using UserInterface.LogIn;
 namespace UserInterface.UserAbilitys
 {
     /// <summary>
-    /// Interaction logic for PersonalInfoUpdate_costumer.xaml
+    /// Interaction logic for PersonalInfoUpdate_customers.xaml
     /// </summary>
-    public partial class PersonalInfoUpdate_costumer : Window
+    public partial class PersonalInfoUpdate_customers : Window
     {
-        private Costumers ME;
-        private UnitOfWork_Costumer unitOfWork_;
-        public PersonalInfoUpdate_costumer(UnitOfWork_Costumer unit, Costumers costumers)
+        private customerss ME;
+        private UnitOfWork_customers unitOfWork_;
+        public PersonalInfoUpdate_customers(UnitOfWork_customers unit, customerss customerss)
         {
             InitializeComponent();
-            ME = costumers;
+            ME = customerss;
             unitOfWork_ = unit;
         }
 
         private async void Window_ContentRendered(object sender, EventArgs e)
         {
-            ME.Address = await unitOfWork_.addressCostumer.GetByCondition(i => i.Costumer_ID == ME.Costumer_ID);
+            ME.Address = await unitOfWork_.addresscustomers.GetByCondition(i => i.customers_ID == ME.customers_ID);
             FirstNamebox.Text = ME.First_Name;
             Lastnamebox.Text = ME.last_Name;
             Emailbox.Text = ME.Email;
@@ -60,7 +60,7 @@ namespace UserInterface.UserAbilitys
                     else
                     {
                         MessageBox.Show("Password Changed successfully");
-                        await unitOfWork_.costumer.UpdatePasswordAsync(ME.Email, Passwordbox.Password);
+                        await unitOfWork_.customers.UpdatePasswordAsync(ME.Email, Passwordbox.Password);
                         await unitOfWork_.CompleteAsync();
                     }
                 }
@@ -102,13 +102,13 @@ namespace UserInterface.UserAbilitys
         {
             try
             {
-                Address_Costumers del = Addressgrid.SelectedItem as Address_Costumers;
+                Address_customerss del = Addressgrid.SelectedItem as Address_customerss;
                 if (del==null)
                 {
                     MessageBox.Show("Cannot delete an empty address");
                     return;
                 }
-                await unitOfWork_.addressCostumer.Delete(del.Address_ID);
+                await unitOfWork_.addresscustomers.Delete(del.Address_ID);
                 await unitOfWork_.CompleteAsync();
                 Addressgrid.ItemsSource = null;
                 Addressgrid.ItemsSource = ME.Address;
@@ -125,13 +125,13 @@ namespace UserInterface.UserAbilitys
         {
             try
             {
-                Address_Costumers update = Addressgrid.SelectedItem as Address_Costumers;
+                Address_customerss update = Addressgrid.SelectedItem as Address_customerss;
                 if (update == null)
                 {
                     MessageBox.Show("Cannot update an empty address");
                     return;
                 }
-                await unitOfWork_.addressCostumer.UpdateAddressAsync(update);
+                await unitOfWork_.addresscustomers.UpdateAddressAsync(update);
                 await unitOfWork_.CompleteAsync();
                 Addressgrid.ItemsSource = null;
                 Addressgrid.ItemsSource = ME.Address;
@@ -150,7 +150,7 @@ namespace UserInterface.UserAbilitys
             try
             {
 
-                Address_Costumers toadd = Addressgrid.SelectedItem as Address_Costumers;
+                Address_customerss toadd = Addressgrid.SelectedItem as Address_customerss;
                 if (toadd==null)
                 {
                     MessageBox.Show("Cannot update an empty address");

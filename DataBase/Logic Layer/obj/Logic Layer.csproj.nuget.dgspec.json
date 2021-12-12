@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Hackeru\\Mid Project\\DataBase\\Logic Layer\\Logic Layer.csproj": {}
+    "D:\\Hackeru\\HackerUGit\\DataBase\\Logic Layer\\Logic Layer.csproj": {}
   },
   "projects": {
-    "D:\\Hackeru\\Mid Project\\DataBase\\DataBase\\DataBase.csproj": {
+    "D:\\Hackeru\\HackerUGit\\DataBase\\DataBase\\DataBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Hackeru\\Mid Project\\DataBase\\DataBase\\DataBase.csproj",
+        "projectUniqueName": "D:\\Hackeru\\HackerUGit\\DataBase\\DataBase\\DataBase.csproj",
         "projectName": "DataBase",
-        "projectPath": "D:\\Hackeru\\Mid Project\\DataBase\\DataBase\\DataBase.csproj",
+        "projectPath": "D:\\Hackeru\\HackerUGit\\DataBase\\DataBase\\DataBase.csproj",
         "packagesPath": "C:\\Users\\nirba\\.nuget\\packages\\",
-        "outputPath": "D:\\Hackeru\\Mid Project\\DataBase\\DataBase\\obj\\",
+        "outputPath": "D:\\Hackeru\\HackerUGit\\DataBase\\DataBase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -78,14 +78,14 @@
         }
       }
     },
-    "D:\\Hackeru\\Mid Project\\DataBase\\Logic Layer\\Logic Layer.csproj": {
+    "D:\\Hackeru\\HackerUGit\\DataBase\\Logic Layer\\Logic Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Hackeru\\Mid Project\\DataBase\\Logic Layer\\Logic Layer.csproj",
+        "projectUniqueName": "D:\\Hackeru\\HackerUGit\\DataBase\\Logic Layer\\Logic Layer.csproj",
         "projectName": "Logic Layer",
-        "projectPath": "D:\\Hackeru\\Mid Project\\DataBase\\Logic Layer\\Logic Layer.csproj",
+        "projectPath": "D:\\Hackeru\\HackerUGit\\DataBase\\Logic Layer\\Logic Layer.csproj",
         "packagesPath": "C:\\Users\\nirba\\.nuget\\packages\\",
-        "outputPath": "D:\\Hackeru\\Mid Project\\DataBase\\Logic Layer\\obj\\",
+        "outputPath": "D:\\Hackeru\\HackerUGit\\DataBase\\Logic Layer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -106,8 +106,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "D:\\Hackeru\\Mid Project\\DataBase\\DataBase\\DataBase.csproj": {
-                "projectPath": "D:\\Hackeru\\Mid Project\\DataBase\\DataBase\\DataBase.csproj"
+              "D:\\Hackeru\\HackerUGit\\DataBase\\DataBase\\DataBase.csproj": {
+                "projectPath": "D:\\Hackeru\\HackerUGit\\DataBase\\DataBase\\DataBase.csproj"
               }
             }
           }
