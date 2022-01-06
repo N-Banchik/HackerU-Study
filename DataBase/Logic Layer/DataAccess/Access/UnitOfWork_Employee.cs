@@ -2,14 +2,11 @@
 using Logic_Layer.DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Logic_Layer.DataAccess.Access
 {
-   public class UnitOfWork_Employee : IunitOfWork_Employee, IAsyncDisposable
+    public class UnitOfWork_Employee : IunitOfWork_Employee, IAsyncDisposable
     {
          readonly DbContext context;
 

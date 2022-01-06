@@ -1,11 +1,7 @@
 ﻿using DataBase.Models;
 using Logic_Layer.DataAccess.Access;
 using Logic_Layer.Encrypt;
-using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Logic_Layer.Log_in

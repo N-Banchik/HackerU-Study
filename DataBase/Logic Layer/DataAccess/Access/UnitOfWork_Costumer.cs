@@ -1,15 +1,11 @@
 ﻿using Logic_Layer.DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using DataBase.Context;
 
 namespace Logic_Layer.DataAccess.Access
 {
-   public  class UnitOfWork_costumers: IunitOfWork_costumers
+    public  class UnitOfWork_costumers: IunitOfWork_costumers
     {
         private readonly DbContext context;
 

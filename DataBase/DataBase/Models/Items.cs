@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
 using DataBase.Models.Connactions;
 
 namespace DataBase.Models
 {
-   public class Items
+    public class Items
     {
         
         public int Item_ID { get; set; }

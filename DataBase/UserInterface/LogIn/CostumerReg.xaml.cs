@@ -1,17 +1,9 @@
 ﻿using Logic_Layer.Log_in;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace UserInterface.LogIn
 {
@@ -51,6 +43,25 @@ namespace UserInterface.LogIn
                         {
                             MessageBox.Show("Cannot leave empty fields!");
                             return;
+                        }
+                        if (Tbox.Name.ToString() == "APT" || Tbox.Name.ToString() == "Housenumber" || Tbox.Name.ToString() == "Zip")
+                        {
+                            if (!int.TryParse(Tbox.Text, out int num))
+                            {
+                                switch (Tbox.Name)
+                                {
+                                    case "APT":
+                                        MessageBox.Show("Apartment Must be a number!");
+                                        return;
+                                    case "Housenumber":
+                                        MessageBox.Show("House number Must be a number!");
+                                        return;
+                                    case "Zip":
+                                        MessageBox.Show("Zipcode Must be a number!");
+                                        return;
+
+                                }
+                            }
                         }
                     }
                     await log.RegistarAsync(Streetname.Text, int.Parse(Housenumber.Text), int.Parse(APT.Text), int.Parse(Zip.Text), City.Text, Firstname.Text, Lastname.Text, Bdate.SelectedDate.Value.Date, Password.Password, Phonenumber.Text, false, Email.Text);

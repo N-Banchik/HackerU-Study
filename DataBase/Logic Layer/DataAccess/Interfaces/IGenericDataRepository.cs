@@ -1,15 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Logic_Layer.DataAccess.Interfaces
 {
-   public interface IGenericDataRepository<T> where T: class 
+    public interface IGenericDataRepository<T> where T: class 
     {
         Task<ICollection<T>> GetAllAsync();
         Task<T> GetById(int Id);

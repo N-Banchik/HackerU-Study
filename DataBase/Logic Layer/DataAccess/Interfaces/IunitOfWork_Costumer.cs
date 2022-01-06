@@ -1,13 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
 
 namespace Logic_Layer.DataAccess.Interfaces
 {
-   public interface IunitOfWork_costumers :IAsyncDisposable
+    public interface IunitOfWork_costumers :IAsyncDisposable
     {
         IAddresscostumersRepository addresscostumers { get;  }
         IBrandsRepository brands { get; }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using DataBase.Models;
 using Logic_Layer.DataAccess.Interfaces;
@@ -55,10 +54,8 @@ namespace Logic_Layer.DataAccess.Access
         {
             try
             {
-              
 
                   dbSet.Update(address);
-
             }
             catch (Exception)
             {

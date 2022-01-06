@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 using Logic_Layer.DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace Logic_Layer.DataAccess.Access
 {
-   public class GenericDataRepository<T> :DbContext, IGenericDataRepository<T> where T : class
+    public class GenericDataRepository<T> :DbContext, IGenericDataRepository<T> where T : class
     {
         protected DbContext context;
         internal DbSet<T> dbSet;

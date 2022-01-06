@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using DataBase.Models;
-using DataBase.Models.Connactions;
 using Logic_Layer.DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
 

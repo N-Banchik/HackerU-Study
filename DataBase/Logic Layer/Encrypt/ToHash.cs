@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Security.Cryptography;
 
 namespace Logic_Layer.Encrypt
@@ -24,7 +20,7 @@ namespace Logic_Layer.Encrypt
 
         public string Addsalt(string tosalt)
         {
-            return tosalt.Substring(0, 3);
+            return tosalt.Substring(0, tosalt.Length>3?3:tosalt.Length);
         }
     }
 }
